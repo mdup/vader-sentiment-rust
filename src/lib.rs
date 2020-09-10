@@ -340,7 +340,6 @@ impl<'a> SentimentIntensityAnalyzer<'a> {
                 result.push(chr);
             }
         }
-        println!("{}", result);
         result
     }
 
@@ -471,7 +470,6 @@ fn special_idioms_check(_valence: f64, tokens: &Vec<&str>, i: usize) -> f64 {
         end_i = min(i + 3, tokens.len());
     }
     let target_window = tokens[(i - 3)..end_i].join(" ").to_lowercase();
-    println!("{}", target_window);
     for (key, val) in SPECIAL_CASE_IDIOMS.iter() {
         if target_window.contains(key) {
             valence = *val;
