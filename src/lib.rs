@@ -307,7 +307,6 @@ impl<'a> SentimentIntensityAnalyzer<'a> {
     pub fn polarity_scores(&self, text: &str) -> HashMap<&str, f64>{
         let text = self.append_emoji_descriptions(text);
         let parsedtext = ParsedText::from_text(&text);
-        println!("{:#?}", parsedtext.tokens);
         let mut sentiments = Vec::new();
         let tokens = &parsedtext.tokens;
 
